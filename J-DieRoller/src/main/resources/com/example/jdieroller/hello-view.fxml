@@ -1,16 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.VBox?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
 
-<?import javafx.scene.control.Button?>
-<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
-      fx:controller="com.example.jdieroller.HelloController">
+<VBox alignment="CENTER" prefHeight="377.0" prefWidth="524.0" spacing="20.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.jdieroller.HelloController">
     <padding>
-        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
     </padding>
-
-    <Label fx:id="welcomeText"/>
-    <Button text="Hello!" onAction="#onHelloButtonClick"/>
+   <HBox>
+      <children>
+         <Label text="# of Dice: " />
+         <TextField fx:id="txtNumDice" />
+      </children>
+   </HBox>
+   <HBox prefHeight="26.0" prefWidth="218.0">
+      <children>
+      
+          <Label fx:id="welcomeText" text="Die Type: " />
+         <ChoiceBox fx:id="cbType" prefWidth="150.0" />
+      </children>
+   </HBox>
+    <HBox>
+        <Label text="Ability Roll: " />
+        <ChoiceBox fx:id="cbAbilities" prefWidth="150.0" />
+    </HBox>
+    <HBox>
+        <Button fx:id="btnRoll" onAction="#btnRollClick" text="Roll" />
+        <Button fx:id="btnClear" mnemonicParsing="false" onAction="#btnClearClick" text="Clear Output" />
+        <Button fx:id="btnAbilityRoll" mnemonicParsing="false" onAction="#btnAbilityClick" text="Ability Roll" />
+    </HBox>
+   <TextArea fx:id="outBox" prefHeight="127.0" prefWidth="484.0" />
 </VBox>
